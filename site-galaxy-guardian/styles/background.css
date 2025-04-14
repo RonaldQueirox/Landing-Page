@@ -1,0 +1,28 @@
+.background {
+    z-index: -1;
+    position: relative; /* Serve pra colocar os elementos em absoluto*/
+}
+
+#images {
+    position: absolute;
+    transition: all 0.8s;
+}
+
+.background::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    background: var(--image-shadow);
+    z-index: 1;
+}
+
+#images img {
+    display: block;
+
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Evita que as imagens fiquem distorcidas*/
+}
